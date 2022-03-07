@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package carving.session;
+
+option go_package = "github.com/bewannabe96/daytrip-datapipeline-grpc-idl/gen/go/carving";
+
+service SessionService {
+    rpc LogSessionStart (LogSessionStartRequest) returns (LogSessionStartResponse) {}
+}
+
+message LogSessionStartRequest {
+    string session_id = 1;
+    string screen_name = 2;
+}
+
+message LogSessionStartResponse {
+    string status = 1;
+    string session_id = 2;
+}
+
